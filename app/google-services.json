@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "20176781504",
+    "firebase_url": "https://bus-card.firebaseio.com",
+    "project_id": "bus-card",
+    "storage_bucket": "bus-card.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:20176781504:android:a3c599626baf8c1a626d25",
+        "android_client_info": {
+          "package_name": "com.akitektuo.buscard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "20176781504-b0dmm9g1o8ib0alg66vaa9rv223otnb3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.akitektuo.buscard",
+            "certificate_hash": "cf5bee0dda8c43a0883031b46439755bf87ed493"
+          }
+        },
+        {
+          "client_id": "20176781504-0iaiun4fjn6belfljacvcuud9t38qomh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKnWP4e6MTt-Eq0V_-aFyBiGrMK7NN1eU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "20176781504-0iaiun4fjn6belfljacvcuud9t38qomh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
