@@ -14,6 +14,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
 
+import kotlin.Unit;
+import kotlin.jvm.functions.Function0;
+
 public class AskForDetailsDialog extends DialogFragment {
 
     private EditText editText;
@@ -39,7 +42,13 @@ public class AskForDetailsDialog extends DialogFragment {
                                 Toast.makeText(getContext(), "Bus cannot be found", Toast.LENGTH_LONG).show();
                             }
                             else{
-                                startActivity(new Intent(getContext(), SuccessActivity.class));
+                                App.Companion.getDatabase().createRequest(new Function0<Unit>() {
+                                    @Override
+                                    public Unit invoke() {
+                                        startActivity(new Intent(getContext(), SuccessActivity.class));
+                                        return null;
+                                    }
+                                });
                             }
                         }
                     }

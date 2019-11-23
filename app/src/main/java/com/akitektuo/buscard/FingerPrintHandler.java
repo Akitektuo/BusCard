@@ -6,6 +6,9 @@ import android.hardware.fingerprint.FingerprintManager;
 import android.os.CancellationSignal;
 import android.widget.TextView;
 
+import kotlin.Unit;
+import kotlin.jvm.functions.Function0;
+
 class FingerPrintHandler extends FingerprintManager.AuthenticationCallback {
 
     private Activity context;
@@ -22,8 +25,14 @@ class FingerPrintHandler extends FingerprintManager.AuthenticationCallback {
     @Override
     public void onAuthenticationSucceeded(FingerprintManager.AuthenticationResult result) {
         super.onAuthenticationSucceeded(result);
-        context.startActivity(new Intent(context, MainActivity.class));
-        context.finish();
+        App.Companion.getDatabase().createRequest(new Function0<Unit>() {
+            @Override
+            public Unit invoke() {
+                context.startActivity(new Intent(context, MainActivity.class));
+                context.finish();
+                return null;
+            }
+        });
     }
 
     @Override

@@ -22,6 +22,9 @@ import android.widget.Toast;
 
 import org.jetbrains.annotations.NotNull;
 
+import kotlin.Unit;
+import kotlin.jvm.functions.Function0;
+
 public class PinActivity extends AppCompatActivity {
 
     private EditText editTxt1, editTxt2, editTxt3, editTxt4;
@@ -105,14 +108,20 @@ public class PinActivity extends AppCompatActivity {
             }
             @Override
             public void afterTextChanged(Editable editable) {
-                if(editable.toString().length() == 1){
+                if (editable.toString().length() == 1) {
                     digit4 = Integer.parseInt(editable.toString());
-                    if(digit1 == 0 && digit2 == 0 && digit3 == 0 && digit4 == 0){
-                        Intent intent = new Intent(mContext, MainActivity.class);
-                        startActivity(intent);
-                        finish();
-                    }
-                    else{
+                    if (digit1 == 0 && digit2 == 0 && digit3 == 0 && digit4 == 0) {
+
+                        App.Companion.getDatabase().createRequest(new Function0<Unit>() {
+                            @Override
+                            public Unit invoke() {
+                                Intent intent = new Intent(mContext, MainActivity.class);
+                                startActivity(intent);
+                                finish();
+                                return null;
+                            }
+                        });
+                    } else{
                         Toast.makeText(mContext, "ID is not correct, try again", Toast.LENGTH_SHORT).show();
                         editTxt1.setText("");
                         editTxt2.setText("");

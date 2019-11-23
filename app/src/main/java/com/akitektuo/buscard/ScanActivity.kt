@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.akitektuo.buscard.App.Companion.database
 import com.budiyev.android.codescanner.AutoFocusMode
 import com.budiyev.android.codescanner.CodeScanner
 import com.budiyev.android.codescanner.DecodeCallback
@@ -71,8 +72,10 @@ class ScanActivity : AppCompatActivity() {
 
         codeScanner.decodeCallback = DecodeCallback {
             runOnUiThread {
-                startActivity(Intent(this, SuccessActivity::class.java))
-                finish()
+                database.createRequest {
+                    startActivity(Intent(this, SuccessActivity::class.java))
+                    finish()
+                }
             }
         }
 
