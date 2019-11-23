@@ -7,22 +7,22 @@ import android.os.Handler
 import android.view.View
 import android.view.animation.AlphaAnimation
 import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat
-import kotlinx.android.synthetic.main.activity_success.*
+import kotlinx.android.synthetic.main.activity_error.*
 
-class SuccessActivity : AppCompatActivity() {
+class ErrorActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_success)
+        setContentView(R.layout.activity_error)
 
-        when (val doneDrawable = imageDone.drawable) {
+        when (val doneDrawable = imageError.drawable) {
             is AnimatedVectorDrawable -> doneDrawable.start()
             is AnimatedVectorDrawableCompat -> doneDrawable.start()
         }
 
         val fadeIn = AlphaAnimation(0f, 1f)
         fadeIn.duration = 1000
-        textConfirm.startAnimation(fadeIn)
+        textError.startAnimation(fadeIn)
 
         Handler().postDelayed({
             finish()

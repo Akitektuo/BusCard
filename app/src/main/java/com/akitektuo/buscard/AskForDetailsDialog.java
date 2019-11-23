@@ -32,16 +32,13 @@ public class AskForDetailsDialog extends DialogFragment {
                     public void onClick(DialogInterface dialog, int which) {
                         String busID = editText.getText().toString();
 
-                        if(busID.length() != 3){
-                            Toast.makeText(getContext(), "Bus cannot be found", Toast.LENGTH_LONG).show();
-                        }
-                        else
-                        {
+                        if (busID.length() != 3){
+                            Toast.makeText(getContext(), "The bus cod must have 3 digits", Toast.LENGTH_LONG).show();
+                        } else {
                             String digit1 = busID.substring(0, 1);
                             if (digit1.equals("0")){
-                                Toast.makeText(getContext(), "Bus cannot be found", Toast.LENGTH_LONG).show();
-                            }
-                            else{
+                                startActivity(new Intent(getContext(), ErrorActivity.class));
+                            } else{
                                 App.Companion.getDatabase().createRequest(new Function0<Unit>() {
                                     @Override
                                     public Unit invoke() {

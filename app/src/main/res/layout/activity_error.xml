@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".SuccessActivity">
+    tools:context=".ErrorActivity">
 
     <ImageView
-        android:id="@+id/imageDone"
+        android:id="@+id/imageError"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:src="@drawable/done_anim"
+        android:src="@drawable/error_anim"
         android:padding="64dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,10 +19,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textConfirm"
+        android:id="@+id/textError"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Validation successful"
+        android:text="Validation failed"
         android:textColor="#fff"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
