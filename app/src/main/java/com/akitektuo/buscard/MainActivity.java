@@ -33,7 +33,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), CheckActivity.class));
             }
         });
-
+        txtCheck.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AskForDetailsDialog dialog = new AskForDetailsDialog();
+                dialog.show(getSupportFragmentManager(), "ask for details");
+            }
+        });
 
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
     }
