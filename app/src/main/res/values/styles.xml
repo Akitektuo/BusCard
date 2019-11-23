@@ -6,7 +6,8 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:fontFamily">@font/open_sans</item>
         <item name="android:windowLightStatusBar">true</item>
-        <item name="android:statusBarColor">#00dfdf</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:colorControlHighlight">#fafafa</item>
     </style>
 
 </resources>
