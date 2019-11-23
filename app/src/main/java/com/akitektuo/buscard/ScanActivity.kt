@@ -1,6 +1,7 @@
 package com.akitektuo.buscard
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -61,7 +62,7 @@ class ScanActivity : AppCompatActivity() {
 
         codeScanner.decodeCallback = DecodeCallback {
             runOnUiThread {
-                Toast.makeText(this, it.text, Toast.LENGTH_LONG).show()
+                startActivity(Intent(this, SuccessActivity::class.java))
                 finish()
             }
         }

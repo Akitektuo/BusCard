@@ -15,6 +15,8 @@
         app:frameAspectRatioWidth="1"
         app:frameAspectRatioHeight="1"
         app:frameSize="0.75"
+        app:autoFocusButtonVisible="false"
+        app:flashButtonVisible="false"
         app:frameThickness="2dp"
         app:maskColor="#77000000"/>
 
