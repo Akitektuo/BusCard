@@ -87,6 +87,7 @@ public class PinActivity extends AppCompatActivity {
                     if(digit1 == 0 && digit2 == 0 && digit3 == 0 && digit4 == 0){
                         Intent intent = new Intent(mContext, MainActivity.class);
                         startActivity(intent);
+                        finish();
                     }
                     else{
                         Toast.makeText(mContext, "ID is not correct, try again", Toast.LENGTH_SHORT).show();
