@@ -9,7 +9,6 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:textColor="#FFF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -17,36 +16,36 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="Enter your pin here"
+        android:textColor="#FFF"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3" />
+        app:layout_constraintVertical_bias="0.19999999" />
 
     <EditText
         android:id="@+id/Digit1"
-        android:textColor="#FFF"
         android:layout_width="36dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/button_border"
         android:gravity="center"
         android:inputType="numberPassword"
         android:padding="8dp"
+        android:textColor="#FFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/Digit2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.43" />
 
     <EditText
         android:id="@+id/Digit2"
-        android:textColor="#FFF"
         android:layout_width="36dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -56,11 +55,13 @@
         android:gravity="center"
         android:inputType="numberPassword"
         android:padding="8dp"
+        android:textColor="#FFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/Digit3"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/Digit1"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.43" />
 
     <EditText
         android:id="@+id/Digit3"
@@ -93,4 +94,32 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/Digit3"
         app:layout_constraintTop_toTopOf="@+id/Digit3" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="151dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Digit3"
+        app:layout_constraintVertical_bias="0.19999999"
+        app:srcCompat="@drawable/fingerprint1" />
+
+    <TextView
+        android:id="@+id/forgotPIN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forgot PIN ?"
+        android:textAllCaps="false"
+        android:textColor="#FFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
