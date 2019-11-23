@@ -23,7 +23,6 @@ public class AskForDetailsDialog extends DialogFragment {
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         View view =getActivity().getLayoutInflater().inflate(R.layout.dialog_ask_for_details, null);
         AlertDialog.Builder builder =new AlertDialog.Builder(getActivity())
-                .setTitle("Enter bus details")
                 .setView(view)
                 .setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
                     @Override
