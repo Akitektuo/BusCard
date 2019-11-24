@@ -71,14 +71,13 @@ class ScanActivity : AppCompatActivity() {
 
         codeScanner.decodeCallback = DecodeCallback {
             runOnUiThread {
-                if (it.text.contains("bus_card")) {
-                    database.createRequest {
-                        startActivity(Intent(this, SuccessActivity::class.java))
-                        finish()
-                    }
-                } else {
-                    database.createRequest {
-                        startActivity(Intent(this, ErrorActivity::class.java))
+                database.createRequest {
+                    database.checkCode(it.text) {
+                        if (it) {
+                            startActivity(Intent(this, SuccessActivity::class.java))
+                        } else {
+                            startActivity(Intent(this, ErrorActivity::class.java))
+                        }
                         finish()
                     }
                 }
