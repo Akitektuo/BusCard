@@ -62,12 +62,11 @@ class ScanActivity : AppCompatActivity() {
 
     private fun initCamera() {
         codeScanner = CodeScanner(this, scanner)
-        codeScanner.camera = CodeScanner.CAMERA_BACK // or CAMERA_FRONT or specific camera id
-        codeScanner.formats = listOf(BarcodeFormat.QR_CODE) // list of type BarcodeFormat,
-        // ex. listOf(BarcodeFormat.QR_CODE)
-        codeScanner.autoFocusMode = AutoFocusMode.SAFE // or CONTINUOUS
-        codeScanner.scanMode = ScanMode.SINGLE // or CONTINUOUS or PREVIEW
-        codeScanner.isAutoFocusEnabled = true // Whether to enable auto focus or not
+        codeScanner.camera = CodeScanner.CAMERA_BACK
+        codeScanner.formats = listOf(BarcodeFormat.QR_CODE)
+        codeScanner.autoFocusMode = AutoFocusMode.SAFE
+        codeScanner.scanMode = ScanMode.SINGLE
+        codeScanner.isAutoFocusEnabled = true
         codeScanner.isFlashEnabled = false
 
         codeScanner.decodeCallback = DecodeCallback {

@@ -10,7 +10,7 @@ import androidx.cardview.widget.CardView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView txtValidate, txtCheck;
+    private TextView txtCheck, txtScanQr, txtBusCode;
     private CardView cardView;
 
     @Override
@@ -20,24 +20,29 @@ public class MainActivity extends AppCompatActivity {
 
         initViews();
 
-        txtValidate.setOnClickListener(new View.OnClickListener() {
+        txtScanQr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), ScanActivity.class));
             }
         });
-
-        cardView.setOnClickListener(new View.OnClickListener() {
+        txtCheck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), CheckActivity.class));
             }
         });
-        txtCheck.setOnClickListener(new View.OnClickListener() {
+        txtBusCode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AskForDetailsDialog dialog = new AskForDetailsDialog();
                 dialog.show(getSupportFragmentManager(), "ask for details");
+            }
+        });
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
             }
         });
 
@@ -45,8 +50,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initViews(){
-        txtValidate = findViewById(R.id.validateTxt);
-        txtCheck = findViewById(R.id.checkCard);
+        txtScanQr = findViewById(R.id.TxtScanQR);
+        txtBusCode = findViewById(R.id.txtBusCode);
         cardView = findViewById(R.id.cardView);
+        txtCheck = findViewById(R.id.txtCheck);
     }
 }

@@ -29,6 +29,6 @@ public class CheckActivity extends AppCompatActivity {
     }
 
     private void initViews(){
-        goBack = findViewById(R.id.goBackBtn);
+        goBack = findViewById(R.id.goBackBtn1);
     }
 }
